@@ -114,3 +114,77 @@ if (header) {
   window.addEventListener('scroll', onScroll);
   onScroll();
 }
+
+// Simple typewriter effect for hero kicker
+(function(){
+  const el = document.getElementById('typeKicker');
+  if (!el) return;
+  const fullText = 'Machine Learning • Generative AI • LLMs • RAG • FastAPI • MLOps';
+  let idx = 0;
+  let deleting = false;
+  const typingSpeed = 40; // ms per char
+  const pause = 1400; // pause at full text
+
+  const type = () => {
+    if (!deleting) {
+      el.textContent = fullText.slice(0, idx + 1);
+      idx++;
+      if (idx === fullText.length) {
+        deleting = true;
+        setTimeout(type, pause);
+        return;
+      }
+      setTimeout(type, typingSpeed);
+    } else {
+      el.textContent = fullText.slice(0, idx - 1);
+      idx--;
+      if (idx === 0) {
+        deleting = false;
+        setTimeout(type, typingSpeed);
+        return;
+      }
+      setTimeout(type, typingSpeed / 1.2);
+    }
+  };
+  // Start with empty then type
+  el.textContent = '';
+  type();
+})();
+
+// Projects tabs filtering
+(function(){
+  const tabs = document.querySelectorAll('.projects-tabs .tab');
+  const cards = document.querySelectorAll('#projects-list .project.card');
+  if (!tabs.length || !cards.length) return;
+
+  const setActive = (filter) => {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.filter === filter));
+    cards.forEach(c => {
+      const match = c.dataset.category === filter;
+      c.style.display = match ? '' : 'none';
+    });
+  };
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const filter = tab.dataset.filter;
+      setActive(filter);
+    });
+  });
+
+  // Default to Machine Learning
+  setActive('ml');
+})();
+
+// View All Projects: show all categories
+(function(){
+  const btn = document.getElementById('viewAllProjects');
+  const tabs = document.querySelectorAll('.projects-tabs .tab');
+  const cards = document.querySelectorAll('#projects-list .project.card');
+  if (!btn || !cards.length) return;
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    tabs.forEach(t => t.classList.remove('active'));
+    cards.forEach(c => { c.style.display = ''; });
+  });
+})();

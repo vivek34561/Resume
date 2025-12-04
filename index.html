@@ -63,11 +63,9 @@
           <i class="fa-solid fa-bars"></i>
         </button>
         <ul id="nav-menu" class="nav-menu">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
+          <li><a href="#edu-exp">Experience & Education</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#education">Education</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -78,11 +76,10 @@
     <!-- HERO -->
     <section class="hero container" data-aos="fade-up" aria-labelledby="intro-title">
       <div class="hero-text">
-        <p class="eyebrow">AI/ML Engineer</p>
-        <h1 id="intro-title">Hi, I'm <span class="highlight">Vivek Kumar Gupta</span></h1>
-        <p class="kicker">Machine Learning • Generative AI • LLMs • RAG • FastAPI • MLOps</p>
+        <h1 id="intro-title">Hi, I'm <span class="highlight shine">Vivek Kumar Gupta</span></h1>
+        <p class="kicker"><span id="typeKicker">Machine Learning • Generative AI • LLMs • RAG • FastAPI • MLOps</span><span class="caret" aria-hidden="true"></span></p>
         <p class="subtitle">
-          AI/ML Engineer skilled in building end-to-end Machine Learning pipelines and Generative AI solutions. Proficient in supervised/unsupervised learning, deep learning, model optimization, and LLM-based applications using scikit-learn, TensorFlow, LangChain, RAG, and FastAPI. Experienced with MLOps practices, vector databases, agentic AI systems, and production deployment via Docker and MLflow. Achieved top 7 rank in Smart India Hackathon 2024 and certified in Oracle AI Foundations and Generative AI (LangChain, HuggingFace).
+          AI/ML Engineer building end-to-end Machine Learning and Generative AI solutions with scikit-learn, TensorFlow, LangChain, RAG, and FastAPI; experienced in MLOps, vector databases, agentic systems, and MLOps/LLMOps.
         </p>
         <ul class="meta">
           <li><i class="fa-solid fa-location-dot"></i> Kushinagar, Uttar Pradesh, India</li>
@@ -94,23 +91,12 @@
           <a class="btn ghost" href="https://www.linkedin.com/in/vivek-gupta-0400452b6/" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
           <a class="btn ghost" href="https://github.com/vivek34561" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-github"></i> GitHub</a>
         </div>
-        <p class="badges">
-          <span class="badge">Top 7 • Smart India Hackathon 2024</span>
-          <span class="badge">Oracle AI Foundations</span>
-          <span class="badge">Generative AI: LangChain & HF</span>
-        </p>
+        
       </div>
       <div class="hero-art" aria-hidden="true">
         <div class="avatar">
           <img src="my_photo.png" alt="Vivek Kumar Gupta" />
         </div>
-        <ul class="tech-chiplist">
-          <li class="chip">LangChain</li>
-          <li class="chip">RAG</li>
-          <li class="chip">FastAPI</li>
-          <li class="chip">Docker</li>
-          <li class="chip">MLflow</li>
-        </ul>
       </div>
     </section>
 
@@ -128,10 +114,7 @@
                   <h3>Outlier – AI Response Evaluator (Freelance)</h3>
                   <span class="meta-right">Mar 2025 • Remote</span>
                 </header>
-                <ul class="item-points">
-                  <li>Evaluated AI model responses for accuracy, coherence, and prompt alignment in English, Hindi & code.</li>
-                  <li>Analyzed and rated multilingual LLM outputs, identifying hallucinations and logical errors to enhance response quality.</li>
-                </ul>
+                <p style="margin:6px 0 0 0; color:var(--muted)">Evaluated and rated multilingual LLM outputs (English, Hindi, code) to improve accuracy, reduce hallucinations, and enhance response quality.</p>
               </article>
             </div>
           </div>
@@ -155,26 +138,17 @@
     <!-- PROJECTS -->
     <section id="projects" class="section container" data-aos="fade-up" aria-labelledby="projects-title">
       <h2 id="projects-title" class="section-title">Projects</h2>
-      <div class="grid cards">
-        <!-- Project 1 -->
-        <article class="project card" data-aos="zoom-in" data-aos-delay="50">
-          <div class="project-thumb">
-            <img src="1.png" alt="AI-Based Farmer Query Support and Advisory System screenshot" />
-          </div>
-          <div class="project-head">
-            <h3>AI-Based Farmer Query Support and Advisory System</h3>
-            <span class="date">Sep 2025</span>
-          </div>
-          <div class="actions">
-            <a class="btn small" href="https://ai-based-farmer-query-system-f-13e43c423885.herokuapp.com/" target="_blank" rel="noreferrer noopener"><i class="fa-solid fa-link"></i> Live</a>
-            <a class="btn small" href="https://www.youtube.com/watch?v=GMXjgJX-v4k" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-youtube"></i> Video</a>
-            <a class="btn small" href="https://github.com/vivek34561/AIBasedFarmerQuerySupportandAdvisorySystemNew" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-github"></i> GitHub</a>
-          </div>
-          <p class="project-desc small">Streamlit suite for farmers: chatbot, disease detection, crop planning, and market prices.</p>
-        </article>
 
-        <!-- Project 2 -->
-        <article class="project card" data-aos="zoom-in" data-aos-delay="100">
+      <!-- Tabs -->
+      <div class="projects-tabs" role="tablist" aria-label="Project categories">
+        <button class="tab active" role="tab" aria-selected="true" aria-controls="projects-list" data-filter="ml">Machine Learning</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="projects-list" data-filter="genai">Generative AI</button>
+      </div>
+
+      <!-- Unified list (filtered by tabs) -->
+      <div id="projects-list" class="grid cards one-row" role="region" aria-live="polite">
+        <!-- CardioCare AI (ML) -->
+        <article class="project card" data-category="ml" data-aos="zoom-in" data-aos-delay="50">
           <div class="project-thumb">
             <img src="2.png" alt="CardioCare AI screenshot" />
           </div>
@@ -190,8 +164,25 @@
           <p class="project-desc small">Heart disease risk prediction with FastAPI backend and multilingual guidance.</p>
         </article>
 
-        <!-- Project 3 -->
-        <article class="project card" data-aos="zoom-in" data-aos-delay="150">
+        <!-- AI-Based Farmer Query Support (GenAI) -->
+        <article class="project card" data-category="genai" data-aos="zoom-in" data-aos-delay="50">
+          <div class="project-thumb">
+            <img src="1.png" alt="AI-Based Farmer Query Support and Advisory System screenshot" />
+          </div>
+          <div class="project-head">
+            <h3>AI-Based Farmer Query Support and Advisory System</h3>
+            <span class="date">Sep 2025</span>
+          </div>
+          <div class="actions">
+            <a class="btn small" href="https://ai-based-farmer-query-system-f-13e43c423885.herokuapp.com/" target="_blank" rel="noreferrer noopener"><i class="fa-solid fa-link"></i> Live</a>
+            <a class="btn small" href="https://www.youtube.com/watch?v=GMXjgJX-v4k" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-youtube"></i> Video</a>
+            <a class="btn small" href="https://github.com/vivek34561/AIBasedFarmerQuerySupportandAdvisorySystemNew" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+          <p class="project-desc small">Streamlit suite for farmers: chatbot, disease detection, crop planning, and market prices.</p>
+        </article>
+
+        <!-- AI-Powered Interview Preparation Tool (GenAI) -->
+        <article class="project card" data-category="genai" data-aos="zoom-in" data-aos-delay="100">
           <div class="project-thumb">
             <img src="3.png" alt="AI-Powered Interview Preparation Tool screenshot" />
           </div>
@@ -207,7 +198,7 @@
         </article>
       </div>
       <div class="cta projects-cta" style="margin-top:12px">
-        <a class="btn primary" href="#" aria-label="View all projects">View All Projects</a>
+        <a id="viewAllProjects" class="btn primary" href="#" aria-label="View all projects">View All Projects</a>
       </div>
     </section>
 
@@ -251,15 +242,54 @@
     
 
     <!-- CONTACT -->
-    <section id="contact" class="section container" data-aos="fade-up">
-      <h2 class="section-title">Contact</h2>
-      <div class="card contact-card">
-        <p>Open to roles in AI/ML Engineering, Machine Learning, Generative AI, LLMs, and MLOps. Reach out and let's build something impactful.</p>
-        <div class="cta">
-          <a class="btn primary" href="mailto:vivekgupta3749@gmail.com"><i class="fa-solid fa-paper-plane"></i> Email Me</a>
-          <a class="btn ghost" href="tel:+919151429036"><i class="fa-solid fa-phone"></i> Call</a>
-          <a class="btn ghost" href="https://www.linkedin.com/in/vivek-gupta-0400452b6/" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-linkedin"></i> Connect</a>
+    <section id="contact" class="section container" data-aos="fade-up" aria-labelledby="contact-title">
+      <div class="contact-header">
+        <h2 id="contact-title" class="section-title">Let's Work Together</h2>
+        <a class="btn primary say-hello" href="mailto:vivekgupta3749@gmail.com" aria-label="Say Hello">Say Hello</a>
+      </div>
+      <div class="contact-grid">
+        <!-- Left info -->
+        <div class="contact-info card">
+          <div class="info-block">
+            <p class="label">My Residence:-</p>
+            <p class="value">Kushinagar, Uttar Pradesh, India</p>
+          </div>
+          <div class="info-block">
+            <p class="label">Call me:</p>
+            <p class="value"><a href="tel:+919151429036">+91 9151429036</a></p>
+          </div>
+          <div class="info-block">
+            <p class="label">Mail me:</p>
+            <p class="value"><a href="mailto:vivekgupta3749@gmail.com">vivekgupta3749@gmail.com</a></p>
+          </div>
+          <div class="info-block">
+            <p class="label">Follow me:</p>
+            <ul class="social big">
+              <li><a href="https://twitter.com/" aria-label="Twitter" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-x-twitter"></i></a></li>
+              <li><a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href="https://www.youtube.com/@vivekgupta7012" aria-label="YouTube" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-youtube"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/vivek-gupta-0400452b6/" aria-label="LinkedIn" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-linkedin"></i></a></li>
+              <li><a href="https://github.com/vivek34561" aria-label="GitHub" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-github"></i></a></li>
+            </ul>
+          </div>
         </div>
+
+        <!-- Right form -->
+        <form class="contact-form card" aria-label="Contact form" onsubmit="return false;">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your Name" aria-label="Your Name" />
+            <input type="email" name="email" placeholder="Your Email" aria-label="Your Email" />
+          </div>
+          <div class="form-row">
+            <input type="text" name="subject" placeholder="Subject" aria-label="Subject" />
+          </div>
+          <div class="form-row">
+            <textarea name="message" placeholder="Message" rows="5" aria-label="Message"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn primary"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+          </div>
+        </form>
       </div>
     </section>
   </main>
