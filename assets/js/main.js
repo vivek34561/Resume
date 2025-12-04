@@ -1,7 +1,7 @@
 // Init AOS (scroll animations)
 AOS.init({
   once: true,
-  duration: 700,
+  duration: 800,
   easing: 'ease-out-cubic',
   offset: 90
 });
@@ -50,3 +50,67 @@ if (backToTop) {
 // Footer year
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// Subtle parallax on avatar (safe, low CPU)
+const avatar = document.querySelector('.avatar');
+if (avatar) {
+  window.addEventListener('scroll', () => {
+    const rect = avatar.getBoundingClientRect();
+    const visible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (!visible) return;
+    const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+    const translateY = (progress - 0.5) * 6; // range ~ -3 to 3px
+    avatar.style.transform = `translateY(${translateY}px)`;
+  });
+}
+
+// Press ripple for buttons
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.addEventListener('mousedown', (e) => {
+    const ripple = document.createElement('span');
+    ripple.style.position = 'absolute';
+    ripple.style.inset = '0';
+    ripple.style.borderRadius = 'inherit';
+    ripple.style.background = 'radial-gradient(120px 120px at '+e.offsetX+'px '+e.offsetY+'px, rgba(255,255,255,.15), transparent 60%)';
+    ripple.style.pointerEvents = 'none';
+    ripple.style.opacity = '0';
+    ripple.style.animation = 'btnRipple .6s ease';
+    btn.style.position = 'relative';
+    btn.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  });
+});
+
+// Theme toggle with localStorage
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+const applyThemeIcon = () => {
+  if (!themeToggle) return;
+  const usingLight = root.classList.contains('light');
+  themeToggle.innerHTML = usingLight ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
+};
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+  root.classList.add('light');
+}
+applyThemeIcon();
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const isLight = root.classList.toggle('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    applyThemeIcon();
+  });
+}
+
+// Header shadow on scroll for depth
+const header = document.querySelector('.site-header');
+if (header) {
+  const onScroll = () => {
+    if (window.scrollY > 8) header.style.boxShadow = '0 6px 20px rgba(0,0,0,.25)';
+    else header.style.boxShadow = 'none';
+  };
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+}

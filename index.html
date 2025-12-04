@@ -53,9 +53,12 @@
     <div class="container header-inner">
       <a class="brand" href="#home" aria-label="Go to top">
         <span class="logo">VG</span>
-        <span class="brand-text">Vivek Gupta</span>
+        <span class="brand-text">Vivek Kumar Gupta</span>
       </a>
       <nav class="nav" aria-label="Primary">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
+          <i class="fa-solid fa-sun"></i>
+        </button>
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -73,13 +76,13 @@
 
   <main id="home" class="site-main">
     <!-- HERO -->
-    <section class="hero container" data-aos="fade-up">
+    <section class="hero container" data-aos="fade-up" aria-labelledby="intro-title">
       <div class="hero-text">
         <p class="eyebrow">AI/ML Engineer</p>
-        <h1>Hi, I'm <span class="highlight">Vivek Kumar Gupta</span></h1>
+        <h1 id="intro-title">Hi, I'm <span class="highlight">Vivek Kumar Gupta</span></h1>
         <p class="kicker">Machine Learning • Generative AI • LLMs • RAG • FastAPI • MLOps</p>
         <p class="subtitle">
-          Building end-to-end Machine Learning and Generative AI solutions using scikit-learn, TensorFlow, LangChain, and FastAPI. Experienced with ML pipelines, model deployment, vector databases, agentic AI systems, and production orchestration using Docker and MLflow.
+          AI/ML Engineer skilled in building end-to-end Machine Learning pipelines and Generative AI solutions. Proficient in supervised/unsupervised learning, deep learning, model optimization, and LLM-based applications using scikit-learn, TensorFlow, LangChain, RAG, and FastAPI. Experienced with MLOps practices, vector databases, agentic AI systems, and production deployment via Docker and MLflow. Achieved top 7 rank in Smart India Hackathon 2024 and certified in Oracle AI Foundations and Generative AI (LangChain, HuggingFace).
         </p>
         <ul class="meta">
           <li><i class="fa-solid fa-location-dot"></i> Kushinagar, Uttar Pradesh, India</li>
@@ -111,39 +114,53 @@
       </div>
     </section>
 
-    <!-- ABOUT / SUMMARY -->
-    <section id="about" class="section container" data-aos="fade-up">
-      <h2 class="section-title">Summary</h2>
-      <div class="card">
-        <p>
-          AI/ML Engineer skilled in building end-to-end Machine Learning pipelines and Generative AI solutions. Proficient in supervised/unsupervised learning, deep learning, model optimization, and LLM-based applications using scikit-learn, TensorFlow, LangChain, RAG, and FastAPI. Experienced with MLOps practices, vector databases, agentic AI systems, and production deployment via Docker and MLflow. Achieved top 7 rank in Smart India Hackathon 2024 and certified in Oracle AI Foundations and Generative AI (LangChain, HuggingFace).
-        </p>
-      </div>
-    </section>
+    
+      <!-- EDUCATION + EXPERIENCE (dual column) -->
+      <section id="edu-exp" class="section container" data-aos="fade-up" aria-labelledby="edu-exp-title">
+        <h2 id="edu-exp-title" class="section-title">Experience & Education</h2>
+        <div class="two-col">
+          <!-- Left: Experience -->
+          <div>
+            <h3 class="subsection-title">Experience</h3>
+            <div class="timeline">
+              <article class="timeline-item card">
+                <header class="item-head">
+                  <h3>Outlier – AI Response Evaluator (Freelance)</h3>
+                  <span class="meta-right">Mar 2025 • Remote</span>
+                </header>
+                <ul class="item-points">
+                  <li>Evaluated AI model responses for accuracy, coherence, and prompt alignment in English, Hindi & code.</li>
+                  <li>Analyzed and rated multilingual LLM outputs, identifying hallucinations and logical errors to enhance response quality.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+          <!-- Right: Education -->
+          <div>
+            <h3 class="subsection-title">Education</h3>
+            <article class="card">
+              <header class="item-head">
+                <h3>Indian Institute of Information Technology (IIIT) Bhagalpur</h3>
+                <span class="meta-right">2023 – 2027 • Bhagalpur, Bihar, India</span>
+              </header>
+              <p>B.Tech in Mathematics and Computing – CGPA: 7.75 (absolute)</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section container" data-aos="fade-up">
-      <h2 class="section-title">Experience</h2>
-      <div class="timeline">
-        <article class="timeline-item card">
-          <header class="item-head">
-            <h3>Outlier – AI Response Evaluator (Freelance)</h3>
-            <span class="meta-right">Mar 2025 • Remote</span>
-          </header>
-          <ul class="item-points">
-            <li>Evaluated AI model responses for accuracy, coherence, and prompt alignment in English, Hindi & code.</li>
-            <li>Analyzed and rated multilingual LLM outputs, identifying hallucinations and logical errors to enhance response quality.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
+    
+    
     <!-- PROJECTS -->
-    <section id="projects" class="section container" data-aos="fade-up">
-      <h2 class="section-title">Projects</h2>
+    <section id="projects" class="section container" data-aos="fade-up" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="section-title">Projects</h2>
       <div class="grid cards">
         <!-- Project 1 -->
         <article class="project card" data-aos="zoom-in" data-aos-delay="50">
+          <div class="project-thumb">
+            <img src="1.png" alt="AI-Based Farmer Query Support and Advisory System screenshot" />
+          </div>
           <div class="project-head">
             <h3>AI-Based Farmer Query Support and Advisory System</h3>
             <span class="date">Sep 2025</span>
@@ -153,16 +170,14 @@
             <a class="btn small" href="https://www.youtube.com/watch?v=GMXjgJX-v4k" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-youtube"></i> Video</a>
             <a class="btn small" href="https://github.com/vivek34561/AIBasedFarmerQuerySupportandAdvisorySystemNew" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-github"></i> GitHub</a>
           </div>
-          <p class="project-desc">Streamlit app "Digital Krishi Officer" featuring 5 modules: RAG Chatbot, Disease Detection, Crop Recommender, Planner, and Mandi Prices.</p>
-          <ul class="item-points small">
-            <li>Multilingual UX with voice & TTS in 8 languages using st_audiorec + gTTS; integrated 24-hour weather with cached alerts.</li>
-            <li>Crop recommendation via scikit-learn pipeline over 7 inputs (N, P, K, temperature, humidity, pH, rainfall) with cached model load.</li>
-            <li>Chat with persistent threads, feedback, "Read aloud", expert escalation, and 6+ REST endpoints.</li>
-          </ul>
+          <p class="project-desc small">Streamlit suite for farmers: chatbot, disease detection, crop planning, and market prices.</p>
         </article>
 
         <!-- Project 2 -->
         <article class="project card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="project-thumb">
+            <img src="2.png" alt="CardioCare AI screenshot" />
+          </div>
           <div class="project-head">
             <h3>CardioCare AI</h3>
             <span class="date">Apr 2025</span>
@@ -172,16 +187,14 @@
             <a class="btn small" href="https://www.youtube.com/watch?v=-chceQbgZ8E" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-youtube"></i> Video</a>
             <a class="btn small" href="https://github.com/vivek34561/End-to-End-Heart-Disease-Prediction" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-github"></i> GitHub</a>
           </div>
-          <p class="project-desc">End-to-end Heart Disease Prediction system on Streamlit + FastAPI with sub-250 ms responses.</p>
-          <ul class="item-points small">
-            <li>ML pipeline (ingestion → transformation → training) with scikit-learn/Random Forest; achieved 98% accuracy.</li>
-            <li>Groq LLM for multilingual diet plans, lifestyle guidance, and doctor notes (English, Hindi, Tamil, Bengali, Spanish).</li>
-            <li>Structured logging; reduced incident triage from 3 hrs to 15 mins.</li>
-          </ul>
+          <p class="project-desc small">Heart disease risk prediction with FastAPI backend and multilingual guidance.</p>
         </article>
 
         <!-- Project 3 -->
         <article class="project card" data-aos="zoom-in" data-aos-delay="150">
+          <div class="project-thumb">
+            <img src="3.png" alt="AI-Powered Interview Preparation Tool screenshot" />
+          </div>
           <div class="project-head">
             <h3>AI-Powered Interview Preparation Tool</h3>
             <span class="date">May 2025</span>
@@ -190,13 +203,11 @@
             <a class="btn small" href="https://interview-preparation-tool-7eabdc1176ed.herokuapp.com/" target="_blank" rel="noreferrer noopener"><i class="fa-solid fa-link"></i> Live</a>
             <a class="btn small" href="https://github.com/vivek34561/Resume-Tracking-And-AI-Based-Mock-Interview" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-github"></i> GitHub</a>
           </div>
-          <p class="project-desc">AI Interview & Resume Screening app using Streamlit and LangChain, deployed on Heroku.</p>
-          <ul class="item-points small">
-            <li>RAG pipeline with FAISS + OpenAI embeddings (1,000-token chunks, 200 overlap) to retrieve top-3 contexts.</li>
-            <li>Personalized mock interviews with difficulty control, skill focus, and automated scoring.</li>
-            <li>Real-time voice: TTS via GPT-4o-mini-tts and STT via Whisper-1; integrated Adzuna job search API.</li>
-          </ul>
+          <p class="project-desc small">Mock interviews and resume screening using LangChain with real-time voice.</p>
         </article>
+      </div>
+      <div class="cta projects-cta" style="margin-top:12px">
+        <a class="btn primary" href="#" aria-label="View all projects">View All Projects</a>
       </div>
     </section>
 
@@ -205,43 +216,39 @@
       <h2 class="section-title">Technical Skills</h2>
       <div class="grid skills">
         <div class="card">
-          <h3><i class="fa-solid fa-code"></i> Languages & Databases</h3>
+          <div class="skill-head"><h3><i class="fa-solid fa-code"></i> Languages & Databases</h3><span class="skill-percent">100%</span></div>
           <p>Python, C++, MySQL</p>
+          <div class="skill-bar" aria-hidden="true"><span class="skill-fill purple" style="width:100%"></span></div>
         </div>
         <div class="card">
-          <h3><i class="fa-solid fa-layer-group"></i> Frameworks & Libraries</h3>
+          <div class="skill-head"><h3><i class="fa-solid fa-layer-group"></i> Frameworks & Libraries</h3><span class="skill-percent">90%</span></div>
           <p>FastAPI, Pandas, NumPy, Scikit-learn, TensorFlow</p>
+          <div class="skill-bar" aria-hidden="true"><span class="skill-fill yellow" style="width:90%"></span></div>
         </div>
         <div class="card">
-          <h3><i class="fa-solid fa-robot"></i> AI & ML</h3>
+          <div class="skill-head"><h3><i class="fa-solid fa-robot"></i> AI & ML</h3><span class="skill-percent">95%</span></div>
           <p>Supervised/Unsupervised Learning, Deep Learning, Transfer Learning, Model Optimization</p>
+          <div class="skill-bar" aria-hidden="true"><span class="skill-fill red" style="width:95%"></span></div>
         </div>
         <div class="card">
-          <h3><i class="fa-solid fa-wand-magic-sparkles"></i> NLP & Generative AI</h3>
+          <div class="skill-head"><h3><i class="fa-solid fa-wand-magic-sparkles"></i> NLP & Generative AI</h3><span class="skill-percent">88%</span></div>
           <p>LangChain, LangGraph, RAG, HuggingFace, Pinecone, FAISS, ChromaDB</p>
+          <div class="skill-bar" aria-hidden="true"><span class="skill-fill cyan" style="width:88%"></span></div>
         </div>
         <div class="card">
-          <h3><i class="fa-solid fa-gears"></i> MLOps & DevOps</h3>
+          <div class="skill-head"><h3><i class="fa-solid fa-gears"></i> MLOps & DevOps</h3><span class="skill-percent">100%</span></div>
           <p>MLflow, DVC, Docker</p>
+          <div class="skill-bar" aria-hidden="true"><span class="skill-fill dark" style="width:100%"></span></div>
         </div>
         <div class="card">
-          <h3><i class="fa-solid fa-toolbox"></i> Tools</h3>
+          <div class="skill-head"><h3><i class="fa-solid fa-toolbox"></i> Tools</h3><span class="skill-percent">85%</span></div>
           <p>Git/GitHub, Jupyter, VS Code, BeautifulSoup</p>
+          <div class="skill-bar" aria-hidden="true"><span class="skill-fill purple" style="width:85%"></span></div>
         </div>
       </div>
     </section>
 
-    <!-- EDUCATION -->
-    <section id="education" class="section container" data-aos="fade-up">
-      <h2 class="section-title">Education</h2>
-      <article class="card">
-        <header class="item-head">
-          <h3>Indian Institute of Information Technology (IIIT) Bhagalpur</h3>
-          <span class="meta-right">2023 – 2027 • Bhagalpur, Bihar, India</span>
-        </header>
-        <p>B.Tech in Mathematics and Computing – CGPA: 7.75 (absolute)</p>
-      </article>
-    </section>
+    
 
     <!-- CONTACT -->
     <section id="contact" class="section container" data-aos="fade-up">
