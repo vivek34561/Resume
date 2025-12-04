@@ -124,7 +124,7 @@ body{
 .badge{background:rgba(124,58,237,0.15); border:1px solid rgba(124,58,237,0.35); color:#d6c6ff; padding:4px 8px; border-radius:999px; font-size:12px}
 
 .hero-art{display:grid; place-items:center}
-.avatar{width:180px; height:180px; border-radius:28px; display:grid; place-items:center; font-weight:800; font-size:48px; letter-spacing:.5px;
+.avatar{width:220px; height:220px; border-radius:28px; display:grid; place-items:center; font-weight:800; font-size:48px; letter-spacing:.5px;
   background:linear-gradient(135deg, rgba(96,165,250,0.22), rgba(34,211,238,0.22)); border:1px solid rgba(255,255,255,0.12); box-shadow:var(--card-shadow);
   position:relative; overflow:hidden; animation:float 6s ease-in-out infinite}
 .avatar::after{content:""; position:absolute; inset:-40%; background:radial-gradient(120px 120px at 30% 30%, rgba(34,211,238,.25), transparent 60%);
@@ -145,6 +145,7 @@ body{
 @media(min-width:900px){
   .hero{grid-template-columns:1.2fr .8fr; align-items:center}
   .hero h1{font-size:46px}
+  .avatar{width:260px; height:260px}
 }
 
 /**********************
