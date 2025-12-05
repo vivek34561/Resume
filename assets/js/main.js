@@ -51,6 +51,68 @@ if (backToTop) {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// Contact form: open default email client with prefilled message
+(function(){
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  const statusEl = document.getElementById('formStatus');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  const FORMSPREE_ENDPOINT = ''; // Optional: set a default endpoint like "https://formspree.io/f/xxxxxx"
+
+  const setStatus = (msg, type='info') => {
+    if (!statusEl) return;
+    statusEl.textContent = msg;
+    statusEl.dataset.type = type;
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    const name = (fd.get('name') || '').toString();
+    const email = (fd.get('email') || '').toString();
+    const subject = (fd.get('subject') || 'Portfolio contact').toString();
+    const message = (fd.get('message') || '').toString();
+    const endpoint = (form.getAttribute('data-endpoint') || FORMSPREE_ENDPOINT).trim();
+
+    // If a Formspree endpoint is present, submit via AJAX
+    if (endpoint) {
+      try {
+        submitBtn && (submitBtn.disabled = true);
+        setStatus('Sending…', 'info');
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, subject, message })
+        });
+        if (res.ok) {
+          setStatus('Thanks! Your message has been sent.', 'success');
+          form.reset();
+        } else {
+          setStatus('Unable to send via server. Opening email app…', 'warning');
+          // Fallback to mailto
+          const bodyText = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+          const mailto = `mailto:vivekgupta3749@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+          window.location.href = mailto;
+        }
+      } catch (err) {
+        setStatus('Network error. Opening email app…', 'warning');
+        const bodyText = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+        const mailto = `mailto:vivekgupta3749@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+        window.location.href = mailto;
+      } finally {
+        submitBtn && (submitBtn.disabled = false);
+      }
+      return;
+    }
+
+    // No endpoint set: use mailto fallback directly
+    const bodyText = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+    const mailto = `mailto:vivekgupta3749@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+    window.location.href = mailto;
+  });
+})();
+
 // Subtle parallax on avatar (safe, low CPU)
 const avatar = document.querySelector('.avatar');
 if (avatar) {

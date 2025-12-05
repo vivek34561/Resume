@@ -244,7 +244,9 @@ body{
 .contact-info .value a{color:var(--text); text-decoration:none}
 .contact-info .value a:hover{text-decoration:underline}
 .social.big{display:flex; gap:8px; list-style:none; padding:0; margin:6px 0 0 0}
-.social.big a{display:inline-grid; place-items:center; width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg,var(--primary),var(--primary-2)); color:#fff}
+.social.big a{display:inline-grid; place-items:center; width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg,var(--primary),var(--primary-2)); color:#fff; overflow:hidden}
+.social.big img{width:22px; height:22px; display:block; filter:drop-shadow(0 0 0 rgba(0,0,0,0))}
+.social.big a:hover{transform:translateY(-2px)}
 
 .contact-form input,
 .contact-form textarea{width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,0.12); background:var(--surface); color:var(--text)}
@@ -255,6 +257,9 @@ body{
   .contact-form .form-row:first-child{grid-template-columns:1fr 1fr}
 }
 .contact-form .form-actions{display:flex; justify-content:flex-start}
+.form-status{margin-top:8px; font-size:14px; color:var(--muted)}
+.form-status[data-type="success"]{color:#22c55e}
+.form-status[data-type="warning"]{color:#f59e0b}
 
 .back-to-top{position:fixed; right:20px; bottom:20px; width:40px; height:40px; border-radius:12px; border:none; background:linear-gradient(135deg,var(--primary),var(--primary-2)); color:#fff; display:none; align-items:center; justify-content:center; cursor:pointer; box-shadow:var(--card-shadow)}
 .back-to-top.show{display:flex; animation:fadeIn .3s ease}
