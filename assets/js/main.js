@@ -157,10 +157,15 @@ if (header) {
   const cards = document.querySelectorAll('#projects-list .project.card');
   if (!tabs.length || !cards.length) return;
 
+  const hasCategory = (el, filter) => {
+    const cats = (el.dataset.category || '').split(/\s+/).filter(Boolean);
+    return cats.includes(filter);
+  };
+
   const setActive = (filter) => {
     tabs.forEach(t => t.classList.toggle('active', t.dataset.filter === filter));
     cards.forEach(c => {
-      const match = c.dataset.category === filter;
+      const match = hasCategory(c, filter);
       c.style.display = match ? '' : 'none';
     });
   };
@@ -172,8 +177,8 @@ if (header) {
     });
   });
 
-  // Default to Machine Learning
-  setActive('ml');
+  // Default to Top Projects
+  setActive('top');
 })();
 
 // View All Projects: show all categories
