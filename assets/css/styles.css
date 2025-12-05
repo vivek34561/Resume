@@ -44,10 +44,11 @@ body{
   font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
   color:var(--text);
   background-color:var(--bg);
+  /* Subtle, professional backdrop (no grid) */
   background-image:
-    linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
-  background-size:24px 24px;
+    radial-gradient(800px 500px at 15% -10%, rgba(34,211,238,0.06), transparent 60%),
+    radial-gradient(900px 600px at 110% 0%, rgba(168,85,247,0.06), transparent 62%);
+  background-size:auto;
   line-height:1.6;
 }
 
@@ -186,6 +187,10 @@ body{
 @media(min-width:900px){
   .two-col{grid-template-columns:1fr 1fr}
 }
+/* Ensure equal height cards in Experience & Education */
+.two-col > .card{display:flex; flex-direction:column; height:100%}
+.two-col > .card .timeline{flex:1}
+.two-col > .card div{display:block}
 
 /* Skills section */
 .skills-grid{display:grid; gap:16px}
