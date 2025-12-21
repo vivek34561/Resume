@@ -181,7 +181,7 @@ if (header) {
 (function(){
   const el = document.getElementById('typeKicker');
   if (!el) return;
-  const fullText = 'Machine Learning • Generative AI • LLMs • RAG • FastAPI • MLOps';
+  const fullText = 'Machine Learning • Agentic AI • Generative AI • LLMs • RAG • FastAPI • MLOps';
   let idx = 0;
   let deleting = false;
   const typingSpeed = 40; // ms per char
