@@ -222,7 +222,7 @@ body{
 **********************/
 .certificates-grid{display:grid; gap:16px}
 @media(min-width:900px){
-  .certificates-grid{grid-template-columns:repeat(2,1fr)}
+  .certificates-grid{grid-template-columns:repeat(3,1fr)}
 }
 .certificate-thumb{width:100%; aspect-ratio: 16/9; border-radius: var(--radius-sm); overflow:hidden; background: var(--surface-2); border:1px solid rgba(255,255,255,0.1); margin-bottom:10px}
 .light .certificate-thumb{border:1px solid rgba(17,24,39,0.08)}
